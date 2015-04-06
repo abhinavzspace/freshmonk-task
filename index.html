@@ -29,15 +29,14 @@
       margin: 0;
     }
     .circle {
-      width: 40px;
-      height: 40px;
+      width: 25px;
+      height: 25px;
       background-color: #A7A37E;
       border-radius: 50%;
-      margin-right: 20px;
     }
     .circle-big {
-      width: 70px;
-      height: 70px;
+      width: 50px;
+      height: 50px;
       background-color: #A7A37E;
       border-radius: 50%;
       margin: 20px auto 10px;
@@ -59,15 +58,19 @@
     }
     #final-price {
       margin-right: 20px;
-      font-size: 30px;
+      font-size: 1rem;
     }
     #includes-shipping, #best-price {
-      margin-left: 20px;
+      margin: 0 0 0 20px;
+      font-size: 0.7rem;
+    }
+    #best-price {
+      margin-top: 20px;
     }
     .large-button {
       background-color: #A7A37E;
       color: #ffffff;
-      font-size: 28px;
+      font-size: 1rem;
       margin: 0;
     }
   </style>
@@ -92,7 +95,7 @@
           <div layout horizontal center-center>
             <core-image style="width:400px; height:600px;" sizing="contain" src="images/tshirt.jpg"></core-image>
           </div>
-          <div layout horizontal center-center>
+          <div layout horizontal around-justified>
             <div class="circle"></div><div class="circle"></div><div class="circle"></div><div class="circle"></div><div class="circle"></div><div class="circle"></div><div class="circle"></div><div class="circle"></div>
           </div>
           <div layout vertical style="height: 300px; margin-top: 20px;">
@@ -134,7 +137,7 @@
               </section>
             </core-animated-pages>
           </div>
-          <div layout horizontal style="height: 120px;">
+          <div layout horizontal style="height: 100px;">
             <div four flex layout horizontal style="background-color: #E6E2AF;">
               <div layout vertical>
                 <h4 flex id="best-price">Best Price @ 5 items:</h4>
