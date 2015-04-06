@@ -1,0 +1,158 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>Freshmonk Task</title>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <script src="bower_components/webcomponentsjs/webcomponents.min.js"></script>
+  <link rel="import" href="bower_components/core-scaffold/core-scaffold.html">
+  <link rel="import" href="bower_components/core-icon-button/core-icon-button.html">
+  <link rel="import" href="bower_components/core-menu/core-menu.html">
+  <link rel="import" href="bower_components/core-header-panel/core-header-panel.html">
+  <link rel="import" href="bower_components/core-item/core-item.html">
+  <link rel="import" href="bower_components/paper-tabs/paper-tabs.html">
+  <link rel="import" href="bower_components/core-image/core-image.html">
+  <link rel="import" href="bower_components/core-animated-pages/core-animated-pages.html">
+  <link rel="import" href="bower_components/core-animated-pages/transitions/slide-from-right.html">
+  <link rel="import" href="bower_components/paper-button/paper-button.html">
+  <style>
+    paper-tabs::shadow #selectionBar {
+      background-color: #046380;
+      min-height: 3px;
+    }
+    paper-tabs paper-tab::shadow #ink {
+      color: #046380;
+    }
+    paper-tabs paper-tab::shadow .tab-content {
+      background-color: #A7A37E;
+      color: #046380;
+      margin: 0;
+    }
+    .circle {
+      width: 40px;
+      height: 40px;
+      background-color: #A7A37E;
+      border-radius: 50%;
+      margin-right: 20px;
+    }
+    .circle-big {
+      width: 70px;
+      height: 70px;
+      background-color: #A7A37E;
+      border-radius: 50%;
+      margin: 20px auto 10px;
+
+    }
+    .circle:last-child {
+      margin-right: 0;
+    }
+    #choosing-tabs {
+      height: 40px;
+    }
+    #main-tabs {
+      height: 55px;
+    }
+    h3, p {
+      margin: 0;
+      text-align: center;
+      margin: 10px 0;
+    }
+    #final-price {
+      margin-right: 20px;
+      font-size: 30px;
+    }
+    #includes-shipping, #best-price {
+      margin-left: 20px;
+    }
+    .large-button {
+      background-color: #A7A37E;
+      color: #ffffff;
+      font-size: 28px;
+      margin: 0;
+    }
+  </style>
+</head>
+
+<body unresolved touch="auto">
+<template is="auto-binding">
+  <core-scaffold>
+    <div tool class="bottom indent">Freshmonk</div>
+
+    <span tool flex></span>
+    <core-icon-button tool icon="more-vert" on-tap="{{settingsAction}}"></core-icon-button>
+
+    <div>
+      <paper-tabs id="main-tabs" valueattr="hash" selected="{{mainRoute}}">
+        <paper-tab>DESIGN</paper-tab>
+        <paper-tab>SET GOAL</paper-tab>
+        <paper-tab>LAUNCH</paper-tab>
+      </paper-tabs>
+      <core-animated-pages flex valueattr="hash" selected="{{mainRoute}}" transitions="slide-from-right">
+        <div layout vertical style="height: 1050px; background-color: #ffffff;">
+          <div layout horizontal center-center>
+            <core-image style="width:400px; height:600px;" sizing="contain" src="images/tshirt.jpg"></core-image>
+          </div>
+          <div layout horizontal center-center>
+            <div class="circle"></div><div class="circle"></div><div class="circle"></div><div class="circle"></div><div class="circle"></div><div class="circle"></div><div class="circle"></div><div class="circle"></div>
+          </div>
+          <div layout vertical style="height: 300px; margin-top: 20px;">
+            <paper-tabs id="choosing-tabs" valueattr="hash" selected="{{route}}">
+              <paper-tab>CHOOSE STYLES</paper-tab>
+              <paper-tab>ADD IMAGE</paper-tab>
+              <paper-tab>ADD TEXT</paper-tab>
+            </paper-tabs>
+            <core-animated-pages flex valueattr="hash" selected="{{route}}" transitions="slide-from-right">
+              <section layout vertical style="height: 200px">
+                <div layout horizontal around-justified>
+                  <div flex>
+                    <div class="circle-big"></div>
+                    <h3>STYLE 1</h3>
+                    <p>Lorem Ipsum</p>
+                  </div>
+                  <div flex>
+                    <div class="circle-big"></div>
+                    <h3>STYLE 2</h3>
+                    <p>Lorem Ipsum</p>
+                  </div>
+                  <div flex>
+                    <div class="circle-big"></div>
+                    <h3>STYLE 3</h3>
+                    <p>Lorem Ipsum</p>
+                  </div>
+                  <div flex>
+                    <div class="circle-big"></div>
+                    <h3>STYLE 4</h3>
+                    <p>Lorem Ipsum</p>
+                  </div>
+                </div>
+              </section>
+              <section layout vertical center-center>
+                <div>Image adding code</div>
+              </section>
+              <section layout vertical center-center>
+                <div>Text adding code</div>
+              </section>
+            </core-animated-pages>
+          </div>
+          <div layout horizontal style="height: 120px;">
+            <div four flex layout horizontal style="background-color: #E6E2AF;">
+              <div layout vertical>
+                <h4 flex id="best-price">Best Price @ 5 items:</h4>
+                <h4 flex id="includes-shipping">includes shipping across India</h4>
+              </div>
+              <div flex layout horizontal end-justified>
+                <h2 id="final-price">Rs. 300.00</h2>
+              </div>
+            </div>
+            <paper-button flex class="large-button" layout vertical center-center>PROCEED</paper-button>
+          </div>
+        </div>
+        <div layout vertical style="height: 1050px; background-color: #ffffff;">page 2</div>
+        <div layout vertical style="height: 1050px; background-color: #ffffff;">page 3</div>
+      </core-animated-pages>
+    </div>
+  </core-scaffold>
+</template>
+</body>
+
+</html>
