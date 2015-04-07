@@ -16,6 +16,9 @@
   <link rel="import" href="bower_components/core-animated-pages/transitions/slide-from-right.html">
   <link rel="import" href="bower_components/paper-button/paper-button.html">
   <style>
+    html {
+      font-size: 16px;
+    }
     paper-tabs::shadow #selectionBar {
       background-color: #046380;
       min-height: 3px;
@@ -62,10 +65,10 @@
     }
     #includes-shipping, #best-price {
       margin: 0 0 0 20px;
-      font-size: 0.7rem;
+      font-size: 0.5rem;
     }
     #best-price {
-      margin-top: 20px;
+      margin-top: 5px;
     }
     .large-button {
       background-color: #A7A37E;
@@ -137,15 +140,13 @@
               </section>
             </core-animated-pages>
           </div>
-          <div layout horizontal style="height: 100px;">
-            <div three flex layout horizontal style="background-color: #E6E2AF;">
-              <div layout vertical>
-                <h4 flex id="best-price">Best Price @ 5 items:</h4>
-                <h4 flex id="includes-shipping">includes shipping across India</h4>
-              </div>
-              <div flex layout horizontal end-justified>
-                <h2 id="final-price">Rs. 300.00</h2>
-              </div>
+          <div layout horizontal style="height: 60px;">
+            <div flex layout vertical style="background-color: #E6E2AF;">
+              <h4 flex id="best-price">Best Price @ 5 items:</h4>
+              <h4 flex id="includes-shipping">includes shipping across India</h4>
+            </div>
+            <div flex layout vertical center-center style="background-color: #E6E2AF;">
+              <h2 id="final-price">Rs. 300.00</h2>
             </div>
             <paper-button flex class="large-button" layout vertical center-center>PROCEED</paper-button>
           </div>
